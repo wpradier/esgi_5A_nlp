@@ -45,9 +45,13 @@ Dans [ce lien](https://docs.google.com/spreadsheets/d/1HBs08WE5DLcHEfS6MqTivbyYl
   - prend le modèle dumpé
   - prédit sur de nouveaux noms de video
   <br\>(comment cette partie one-hot encode les mots ? ERREUR à éviter: l'encoding en "predict" ne pointe pas les mots vers les mêmes index. Par exemple, en train, un nom de video avec le mot chronique aurait 1 dans la colonne \#10, mais en predict, il aurait 1 dans la colonne \#23)
-- (optionel mais recommandé: créer une pipeline "evaluate" qui fait la cross-validation du modèle pour connaître ses performances)
+- Créer une pipeline "evaluate" qui fait la cross-validation du modèle pour connaître ses performances)
 - Transformer les noms de video avec différentes opérations de NLTK (Stemming, remove stop words) ou de CountVectorizer (min / max document frequency)
 - Envoyer ce code (à la fin du cour)
 - Itérer avec les différentes features / différents modèles pour trouver le plus performant
 - Faire un rapport avec les différentes itérations faites, et les conclusions
-- Envoyer le rapport et le code entraînant le meilleur modèle
+- Envoyer le rapport et le code entraînant le meilleur modèle (avant le 27 octobre)
+
+# NLP TD 2: Entraînement de réseaux de neurones
+
+voir notebooks/TD2.ipynb
