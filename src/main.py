@@ -1,5 +1,7 @@
 import click
 import joblib
+import numpy as np
+from sklearn.model_selection import cross_val_score
 
 from data import make_dataset
 from feature import make_features
@@ -29,7 +31,14 @@ def train(input_filename, model_dump_filename):
 @click.option("--output_filename", default="data/processed/prediction.csv", help="Output file for predictions")
 def predict(input_filename, model_dump_filename, output_filename):
     model = joblib.load(model_dump_filename)
-    pass
+
+    df = make_dataset(input_filename)
+    X, y = make_features(df)
+
+    predictions = model.predict(X)
+
+    print("Got accuracy")
+    print((df["is_comic"] == predictions).mean() * 100)
 
 
 @click.command()
@@ -50,7 +59,9 @@ def evaluate(input_filename):
 
 def evaluate_model(model, X, y):
     # Run k-fold cross validation. Print results
-    pass
+    accuracies = cross_val_score(model, X, y, cv=5, scoring="accuracy")
+
+    print(f"{np.mean(accuracies)} +/- {np.std(accuracies)}")
 
 
 cli.add_command(train)
