@@ -87,4 +87,5 @@ def predict(texts_split_into_words: list[list[str]]) -> list[list[int]]:
     return labels
 ```
 - Expérimenter pour produire le meilleur modèle à identifier les noms de personne sur les noms de videos France Inter.<br/>
+Trouver [sur ce lien](https://drive.google.com/file/d/1ZEuK3JYIgXhG90rKUyq2rLAZW4VexD5J/view?usp=drive_link) un dataset avec les noms de video, et le label pour chaque token. <br/>
 (Remarque: le modèle peut être entraîné sur MultiNERD, puis le dataset France Inter).
