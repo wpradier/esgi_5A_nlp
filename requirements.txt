@@ -2,8 +2,10 @@ jupyter
 torch
 transformers
 dataset
-seqeval evaluate
+seqeval
+evaluate
 pandas
-scikit-learn click
+scikit-learn
+click
 nltk
 transformers[torch]
